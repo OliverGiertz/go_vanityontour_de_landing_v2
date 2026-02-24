@@ -34,7 +34,10 @@
       "Bash(gh run list --limit 5)",
       "Bash(gh run view 22346323845)",
       "Bash(gh run view 22346323845 --log-failed)",
-      "Bash(gh run view 22346839541)"
+      "Bash(gh run view 22346839541)",
+      "WebFetch(domain:go.vanityontour.de)",
+      "Bash(git add index.html)",
+      "Bash(git commit -m \"Security fixes: Add CSP, referrer policy, fix invalid HTML\n\n- Add Content Security Policy header\n- Add strict referrer policy  \n- Fix missing rel=\"\"noopener noreferrer\"\" on external link\n- Replace invalid </br> tags with proper div spacing\n- Improve overall security posture\n\n🤖 Generated with [Claude Code](https://claude.ai/code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\")"
     ],
     "deny": [],
     "ask": [],
