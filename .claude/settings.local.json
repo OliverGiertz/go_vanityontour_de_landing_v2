@@ -2,9 +2,44 @@
   "permissions": {
     "allow": [
       "Bash(git init)",
-      "Bash(git add .)"
+      "Bash(git add .)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nInitial commit: Vanity on Tour Linktree landing page\n\n- Static HTML/CSS Linktree-style landing page\n- Responsive design with dark theme\n- Project showcase (StaySense, Expense Logbook, Blog, RSS-Bot)\n- Social media links and contact information\n- GitHub Actions workflow for automated deployment\n- Complete documentation and setup instructions\n\n🤖 Generated with [Claude Code](https://claude.ai/code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(gh repo create go_vanityontour_de_landing_v2 --public --description \"Static Linktree-style landing page for Vanity on Tour projects - vanlife meets tech\" --source=.)",
+      "Bash(git push -u origin main)",
+      "Bash(ssh hetzner)",
+      "Bash(ssh hetzner \"clpctl sites:list | grep vanity\")",
+      "Bash(ssh hetzner \"clpctl --help\")",
+      "Bash(ssh hetzner \"clpctl list\")",
+      "Bash(ssh hetzner \"clpctl site:add --help\")",
+      "Bash(ssh hetzner \"clpctl site:add go.vanityontour.de --vhost-template=''Generic'' --type=''static''\")",
+      "Bash(ssh hetzner \"clpctl site:add:static go.vanityontour.de\")",
+      "Bash(ssh hetzner \"clpctl site:add:static --domainName=go.vanityontour.de\")",
+      "Bash(ssh hetzner \"clpctl site:add:static --domainName=go.vanityontour.de --siteUser=vanity --siteUserPassword=VanityTour2024!\")",
+      "Bash(ssh hetzner \"ls -la /home/vanity/htdocs/go.vanityontour.de/\")",
+      "Bash(rsync -avz --delete --exclude \".git/\" --exclude \".github/\" ./ hetzner:/home/vanity/htdocs/go.vanityontour.de/)",
+      "Bash(ssh hetzner \"hostname -I | awk ''{print $1}''\")",
+      "Bash(ssh hetzner \"echo $USER\")",
+      "Read(//Users/oliver/.ssh/**)",
+      "Bash(gh secret set SSH_HOST --body \"88.99.209.207\")",
+      "Bash(gh secret set SSH_USER --body \"root\")",
+      "Bash(gh secret set SSH_PORT --body \"22\")",
+      "Bash(gh secret set DEPLOY_PATH --body \"/home/vanity/htdocs/go.vanityontour.de/\")",
+      "Bash(git add README.md)",
+      "Bash(git commit -m \"Update README: Deployment is now active\n\n🤖 Generated with [Claude Code](https://claude.ai/code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\")",
+      "Bash(git push)",
+      "Bash(ssh hetzner \"clpctl site:install:certificate go.vanityontour.de\")",
+      "Bash(ssh hetzner \"clpctl site:install:certificate --domainName=go.vanityontour.de\")",
+      "Bash(ssh hetzner \"clpctl app:list | grep cert\")",
+      "Bash(ssh hetzner \"clpctl lets-encrypt:install:certificate --domainName=go.vanityontour.de\")",
+      "Bash(gh run list --limit 5)",
+      "Bash(gh run view 22346323845)",
+      "Bash(gh run view 22346323845 --log-failed)",
+      "Bash(gh run view 22346839541)"
     ],
     "deny": [],
-    "ask": []
+    "ask": [],
+    "additionalDirectories": [
+      "/Users/oliver/.ssh"
+    ]
   }
 }
