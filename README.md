@@ -16,6 +16,8 @@ In `index.html` sind ein paar **Platzhalter-Links** (z.B. GitHub Repo / App-Stor
 
 ---
 
+**🚀 Automatisches Deployment aktiv!** Bei jedem Push auf `main` wird die Seite automatisch auf https://go.vanityontour.de deployed.
+
 # Deployment via GitHub Actions (SSH + rsync)
 
 Die Workflow-Datei liegt hier:
