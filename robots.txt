@@ -1,0 +1,16 @@
+# robots.txt für https://go.vanityontour.de
+# Erlaubt allen Crawlern das Durchsuchen der Seite
+User-agent: *
+Disallow:
+
+# Optionale Verlangsamung für Crawler, falls der Server stark belastet wird
+# (wird z.B. von Google ignoriert, aber von anderen Bots beachtet)
+# Crawl-delay: 10
+
+# Sonderregeln für bestimmte Crawler
+User-agent: Googlebot
+Disallow:
+
+User-agent: Bingbot
+Disallow:
+
